@@ -77,6 +77,6 @@
         
         <!--Implicit Objects-->
         
-        ${initParam}
+        ${initParam.name}
     </body>
 </html>
