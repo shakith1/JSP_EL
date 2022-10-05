@@ -85,5 +85,7 @@
         <c:forEach var="h" items="${header}">
            ${h}<br/>
         </c:forEach>
+           
+           <%--${cookie}--%>
     </body>
 </html>
