@@ -78,5 +78,7 @@
         <!--Implicit Objects-->
         
         ${initParam.name}
+        
+        ${cookie["JSESSIONID"]}
     </body>
 </html>
