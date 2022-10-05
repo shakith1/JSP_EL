@@ -4,6 +4,7 @@
     Author     : Shakith
 --%>
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page import="java.util.ArrayList"%>
 <%@page import="java.util.List"%>
 <%@page import="java.util.HashMap"%>
@@ -80,5 +81,9 @@
         ${initParam.name}
         
         ${cookie["JSESSIONID"]}
+         <br/>
+        <c:forEach var="h" items="${header}">
+           ${h}<br/>
+        </c:forEach>
     </body>
 </html>
