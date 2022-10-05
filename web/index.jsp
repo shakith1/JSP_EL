@@ -87,5 +87,13 @@
         </c:forEach>
            
            <%--${cookie}--%>
+           
+           <h1>${param.name}</h1>
+           
+           <h1>${paramValues.name[0]}</h1>
+           
+           <c:forEach var="p" items="${paramValues.name}">
+               ${p}
+           </c:forEach>
     </body>
 </html>
