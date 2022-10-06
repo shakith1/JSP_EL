@@ -4,6 +4,7 @@
     Author     : Shakith
 --%>
 
+<%@page import="com.infinity.webapp.User"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page import="java.util.ArrayList"%>
 <%@page import="java.util.List"%>
@@ -75,25 +76,57 @@
         %>
 
         <h1>${empty name ? "Empty" : "Not Empty"}</h1>
-        
+
         <!--Implicit Objects-->
-        
+
         ${initParam.name}
-        
+
         ${cookie["JSESSIONID"]}
-         <br/>
+        <br/>
         <c:forEach var="h" items="${header}">
-           ${h}<br/>
+            ${h}<br/>
         </c:forEach>
-           
-           <%--${cookie}--%>
-           
-           <h1>${param.name}</h1>
-           
-           <h1>${paramValues.name[0]}</h1>
-           
-           <c:forEach var="p" items="${paramValues.name}">
-               ${p}
-           </c:forEach>
+
+        <%--${cookie}--%>
+
+        <h1>${param.name}</h1>
+
+        <h1>${paramValues.name[0]}</h1>
+
+        <c:forEach var="p" items="${paramValues.name}">
+            ${p}
+        </c:forEach>
+
+        <!--    Other    -->
+
+        <%
+            User u1 = new User();
+            u1.setName("Admin");
+            u1.setEmail("admin@gmail.com");
+               
+            pageContext.setAttribute("user1", u1);
+               
+            ArrayList al = new ArrayList();
+            al.add("A");
+            al.add("B");
+            al.add("C");
+            al.add("D");
+               
+            pageContext.setAttribute("al", al);
+               
+            int ar[] = {10,20,30};
+               
+            pageContext.setAttribute("ar", ar);
+            
+            HashMap map1 = new HashMap();
+            map1.put("name", "Admin");
+            map1.put("email", "admin@gmail.com");
+            
+            pageContext.setAttribute("map1", map1);   
+        %>
+        
+        ${ar[0]}
+        
+
     </body>
 </html>
